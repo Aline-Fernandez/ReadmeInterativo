@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto - Sistema de Gestão de Alunos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Cool Neutrals -->
+    <!-- Application Structure Plan: The SPA is structured as an interactive project launchpad/documentation viewer based on the provided README.md. It uses a single-page layout with a fixed navigation bar for smooth scrolling to key sections (Overview, Tech Stack, Setup, Frontend Guide). The core interaction is focused on developer usability, featuring copy-to-clipboard buttons for all code snippets and a tabbed/accordion interface for the setup instructions. This structure was chosen to make the technical documentation more accessible, engaging, and functional for a collaborating developer, directly addressing the goal of making the content "easily consumable and explorable". -->
+    <!-- Visualization & Content Choices: 1. README Content -> Goal: Inform/Guide -> Presentation: Thematic sections with styled text and code blocks -> Interaction: Smooth scroll navigation, copy-to-clipboard buttons -> Justification: Transforms static text into a functional tool for developers. 2. Code Snippets (SQL/C#) -> Goal: Enable easy setup -> Presentation: Pre-formatted code blocks -> Interaction: "Copy" button -> Justification: Improves developer workflow significantly. 3. Tech Stack -> Goal: Inform -> Presentation: List with simple Unicode icons -> Interaction: Static -> Justification: Clear and quick visual reference. All interactions are implemented with Vanilla JS. NO SVG/Mermaid used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .code-block {
+            position: relative;
+        }
+        .copy-button {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: #475569; /* slate-600 */
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: none;
+        }
+        .copy-button:hover {
+            background-color: #334155; /* slate-700 */
+        }
+        .copy-button.copied {
+            background-color: #16a34a; /* green-600 */
+        }
+        .nav-link {
+            transition: color 0.2s, border-color 0.2s;
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-10 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-slate-800">Sistema de Gestão de Alunos</h1>
+                </div>
+                <nav class="hidden md:flex md:space-x-8">
+                    <a href="#visao-geral" class="nav-link text-slate-500 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500">Visão Geral</a>
+                    <a href="#tecnologias" class="nav-link text-slate-500 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500">Tecnologias</a>
+                    <a href="#configuracao" class="nav-link text-slate-500 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500">Configuração</a>
+                    <a href="#frontend" class="nav-link text-slate-500 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500">Frontend</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="max-w-4xl mx-auto">
+            
+            <section id="visao-geral" class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4 border-b pb-2">1. Visão Geral do Projeto</h2>
+                <p class="text-lg leading-relaxed mb-4">Bem-vindo(a) ao projeto do Sistema de Gestão de Alunos! Este repositório contém o backend inicial de um sistema de gestão de alunos, desenvolvido em C# como uma aplicação de console. Ele se conecta a um banco de dados Azure SQL Server e implementa as operações fundamentais de CRUD (Criar, Ler, Atualizar, Excluir).</p>
+                <p class="text-lg leading-relaxed">Este projeto está configurado para ser a base para a futura camada de API, que será consumida por um frontend moderno.</p>
+            </section>
+
+            <section id="tecnologias" class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4 border-b pb-2">2. Tecnologias Utilizadas</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-3 text-indigo-700">Backend (Atual)</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><span class="mr-2">💻</span> <strong>Linguagem:</strong> C#</li>
+                            <li class="flex items-center"><span class="mr-2">⚙️</span> <strong>Plataforma:</strong> .NET (Console Application)</li>
+                            <li class="flex items-center"><span class="mr-2">☁️</span> <strong>Banco de Dados:</strong> Azure SQL Database</li>
+                            <li class="flex items-center"><span class="mr-2">🔗</span> <strong>Acesso a Dados:</strong> Microsoft.Data.SqlClient</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-3 text-indigo-700">Frontend (Futuro)</h3>
+                        <p class="text-slate-500">(A ser definido. Sugestões: React, Angular, Vue.js, etc.)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="configuracao" class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4 border-b pb-2">3. Configuração do Ambiente (Backend)</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Pré-requisitos</h3>
+                        <ul class="list-disc list-inside space-y-1 bg-white p-4 rounded-lg shadow-sm">
+                            <li><strong>Visual Studio:</strong> Versão 2019 ou superior.</li>
+                            <li><strong>SQL Server Management Studio (SSMS):</strong> Para gerenciar o banco de dados.</li>
+                            <li><strong>Conta Azure:</strong> Com um `SistemaAlunoDB` configurado.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">3.1. Criação da Tabela `Alunos`</h3>
+                        <p class="mb-2">Se a tabela `Alunos` ainda não existir, execute o script abaixo no SSMS, conectado ao seu `SistemaAlunoDB`.</p>
+                        <div class="code-block">
+                            <button class="copy-button" data-code-id="sql-create-table">Copiar</button>
+                            <pre id="sql-create-table" class="bg-slate-800 text-white p-4 rounded-lg overflow-x-auto text-sm"><code>USE SistemaAlunoDB;
+
+CREATE TABLE Alunos (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Nome VARCHAR(100) NOT NULL,
+    DataNascimento DATE,
+    Curso VARCHAR(100)
+);</code></pre>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">3.2. Adição da Coluna `CPF`</h3>
+                        <p class="mb-2">Execute o script abaixo para adicionar a coluna `CPF` e a restrição de unicidade.</p>
+                        <div class="code-block">
+                            <button class="copy-button" data-code-id="sql-alter-table">Copiar</button>
+                            <pre id="sql-alter-table" class="bg-slate-800 text-white p-4 rounded-lg overflow-x-auto text-sm"><code>USE SistemaAlunoDB;
+
+ALTER TABLE dbo.Alunos
+ADD CPF VARCHAR(14);
+
+ALTER TABLE dbo.Alunos
+ADD CONSTRAINT UQ_Alunos_CPF UNIQUE (CPF);</code></pre>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Configuração do Projeto C#</h3>
+                        <p class="mb-2">No arquivo `Data/Conexao.cs`, atualize a `connectionString` com suas credenciais do Azure.</p>
+                        <div class="code-block">
+                            <button class="copy-button" data-code-id="csharp-connection-string">Copiar</button>
+                            <pre id="csharp-connection-string" class="bg-slate-800 text-white p-4 rounded-lg overflow-x-auto text-sm"><code>private static string connectionString = "Server=tcp:SEU_SERVIDOR.database.windows.net,1433;Initial Catalog=SistemaAlunoDB;User ID=SEU_USUARIO;Password=SUA_SENHA_REAL;Encrypt=True;";</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="frontend" class="mb-16 scroll-mt-20">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4 border-b pb-2">4. Para o Desenvolvedor Frontend</h2>
+                <p class="text-lg leading-relaxed mb-6">Este backend serve como a camada de dados e lógica de negócios. A abordagem recomendada é transformá-lo em uma **API RESTful** (usando ASP.NET Core Web API) para que o frontend possa consumir os dados via requisições HTTP.</p>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Estrutura de Dados (Model)</h3>
+                        <p class="mb-2">O frontend irá interagir com objetos que seguem esta estrutura:</p>
+                        <div class="code-block">
+                            <button class="copy-button" data-code-id="csharp-model">Copiar</button>
+                            <pre id="csharp-model" class="bg-slate-800 text-white p-4 rounded-lg overflow-x-auto text-sm"><code>public class Aluno
+{
+    public int Id { get; set; }
+    public string Nome { get; set; }
+    public DateTime DataNascimento { get; set; }
+    public string Curso { get; set; }
+    public string CPF { get; set; }
+}</code></pre>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Regras de Negócio Importantes</h3>
+                        <ul class="list-disc list-inside space-y-1 bg-white p-4 rounded-lg shadow-sm">
+                            <li><strong>CPF Único:</strong> O backend não permitirá o cadastro de CPFs duplicados. O frontend deve tratar o erro e informar o usuário.</li>
+                            <li><strong>ID Automático:</strong> O `Id` é gerado pelo banco. Não envie um `Id` ao criar um novo aluno.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Endpoints da API (Sugestão)</h3>
+                        <div class="overflow-x-auto bg-white rounded-lg shadow-sm">
+                            <table class="w-full text-sm text-left text-slate-500">
+                                <thead class="text-xs text-slate-700 uppercase bg-slate-100">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3">Método</th>
+                                        <th scope="col" class="px-6 py-3">Endpoint Sugerido</th>
+                                        <th scope="col" class="px-6 py-3">Descrição</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-white border-b">
+                                        <td class="px-6 py-4 font-medium text-slate-900">ListarTodos()</td>
+                                        <td class="px-6 py-4 font-mono">GET /api/alunos</td>
+                                        <td class="px-6 py-4">Busca todos os alunos.</td>
+                                    </tr>
+                                    <tr class="bg-slate-50 border-b">
+                                        <td class="px-6 py-4 font-medium text-slate-900">Adicionar()</td>
+                                        <td class="px-6 py-4 font-mono">POST /api/alunos</td>
+                                        <td class="px-6 py-4">Cria um novo aluno.</td>
+                                    </tr>
+                                    <tr class="bg-white border-b">
+                                        <td class="px-6 py-4 font-medium text-slate-900">Atualizar()</td>
+                                        <td class="px-6 py-4 font-mono">PUT /api/alunos/{id}</td>
+                                        <td class="px-6 py-4">Atualiza um aluno existente.</td>
+                                    </tr>
+                                     <tr class="bg-slate-50 border-b">
+                                        <td class="px-6 py-4 font-medium text-slate-900">Excluir()</td>
+                                        <td class="px-6 py-4 font-mono">DELETE /api/alunos/{id}</td>
+                                        <td class="px-6 py-4">Exclui um aluno.</td>
+                                    </tr>
+                                    <tr class="bg-white">
+                                        <td class="px-6 py-4 font-medium text-slate-900">BuscarPorId()</td>
+                                        <td class="px-6 py-4 font-mono">GET /api/alunos/{id}</td>
+                                        <td class="px-6 py-4">Busca um aluno específico.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="text-center text-slate-500 mt-20 border-t pt-8">
+                <p>README Interativo gerado para o projeto de colaboração.</p>
+                <p><strong>Desenvolvedora Backend:</strong> Aline</p>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyButtons = document.querySelectorAll('.copy-button');
+
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const codeId = button.getAttribute('data-code-id');
+                    const codeElement = document.getElementById(codeId);
+                    const codeToCopy = codeElement.querySelector('code').innerText;
+
+                    // Fallback for navigator.clipboard
+                    const textArea = document.createElement('textarea');
+                    textArea.value = codeToCopy;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    try {
+                        document.execCommand('copy');
+                        button.innerText = 'Copiado!';
+                        button.classList.add('copied');
+                        
+                        setTimeout(() => {
+                            button.innerText = 'Copiar';
+                            button.classList.remove('copied');
+                        }, 2000);
+
+                    } catch (err) {
+                        console.error('Falha ao copiar texto: ', err);
+                        alert('Não foi possível copiar o código.');
+                    }
+                    document.body.removeChild(textArea);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
